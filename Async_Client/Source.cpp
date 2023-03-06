@@ -202,8 +202,8 @@ int main(int argc, char* argv[]) {
     auto jsonValue = boost::json::parse(jsonEncodedData, errorCode);
     std::ostringstream osstr;
     osstr << jsonValue;
-    std::string zapros = osstr.str();
-    talk_to_svr::start(ep, zapros);
+    std::string request = osstr.str();
+    talk_to_svr::start(ep, request);
     boost::this_thread::sleep(boost::posix_time::millisec(100));
     service.run();
 }
